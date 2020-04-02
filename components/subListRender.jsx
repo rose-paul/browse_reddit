@@ -1,7 +1,7 @@
 import React, { useEffect, useState} from 'react';
 import useSubreddits from './subListHook';
 
-const SubList = () => {
+const SubList = ({ handleClick }) => {
     
     const { subredditList } = useSubreddits({});
 
@@ -12,7 +12,9 @@ const SubList = () => {
                 info => 
                 (
                     <>
-                    <li>Display Name: {info.data.display_name_prefixed}</li>
+                    <li onClick={() => handleClick(info.data.display_name_prefixed, 'sublist')}>
+                        Display Name: {info.data.display_name_prefixed}
+                    </li>
                     <li><img src={info.data.icon_img} alt=""/></li>
                     <li>URL: {info.data.url}</li>
                     </>

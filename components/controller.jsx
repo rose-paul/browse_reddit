@@ -4,11 +4,18 @@ import SubList from './subListRender';
 const Controller = () => {
 
 
-    const [posts, setPosts] = useState();
+    const [posts, setPosts] = useState("Select a subreddit!");
     const [postDisplay, setPostDisplay] = useState();
 
+    const handleClick = (data, type) => {
+        // case 1 sublist
+    }
+
     return (
-        <SubList />
+        <div className="controller">
+            <SubList />
+            {posts}
+        </div>
     )
 
 
