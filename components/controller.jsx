@@ -1,20 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import SubList from './subListRender';
+import SubPostsRender from './subPostsList';
 
 const Controller = () => {
 
-
     const [posts, setPosts] = useState("Select a subreddit!");
-    const [postDisplay, setPostDisplay] = useState();
+    const [postDisplay, setPostDisplay] = useState("Select a post!");
 
-    const handleClick = (data, type) => {
-        // case 1 sublist
+    function handleClick(data, type) {
+        switch (type) {
+            case 'sublist':
+                return setPosts(
+                <SubPostsRender url={data} handleClick={handleClick} />)
+            default:
+                return
+        }
     }
 
     return (
         <div className="controller">
-            <SubList />
-            {posts}
+            <SubList handleClick={handleClick}/>
+            <p>{posts}</p>
+            <p>{postDisplay}</p>
         </div>
     )
 

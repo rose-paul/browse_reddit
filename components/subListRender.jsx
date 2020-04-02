@@ -12,8 +12,8 @@ const SubList = ({ handleClick }) => {
                 info => 
                 (
                     <>
-                    <li onClick={() => handleClick(info.data.display_name_prefixed, 'sublist')}>
-                        Display Name: {info.data.display_name_prefixed}
+                    <li onClick={() => handleClick(info.data.url, 'sublist')}>
+                        Display Name: {info.data.url}
                     </li>
                     <li><img src={info.data.icon_img} alt=""/></li>
                     <li>URL: {info.data.url}</li>
