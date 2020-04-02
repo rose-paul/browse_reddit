@@ -10,8 +10,7 @@ const useSubreddits = () => {
                 setList(res.data.data.children)}
                 )
     }, [])
-    console.log(subredditList)
-    return { subredditList }
+    return { subredditList };
 }
 
 export default useSubreddits;

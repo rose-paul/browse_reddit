@@ -3,9 +3,10 @@ import useSubreddits from './useSubreddits';
 
 const Controller = () => {
 
-    const { subReddits } = useSubreddits();
+    const { subredditList } = useSubreddits({});
     const [posts, setPosts] = useState();
     const [postDisplay, setPostDisplay] = useState();
+    console.log(subredditList)
     return (
         <p>hi</p>
     )
