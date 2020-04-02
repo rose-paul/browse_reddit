@@ -1,7 +1,9 @@
 import React from 'react';
+import Controller from './controller';
+
 
 const App = () => (
-    <p>react is working</p>
+    <Controller />
 )
 
 export default App;
