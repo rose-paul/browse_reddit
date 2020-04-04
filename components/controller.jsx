@@ -15,7 +15,7 @@ const Controller = () => {
                 <SubPostsRender url={data} handleClick={handleClick} />)
             case 'postitem':
                 return setPostDisplay(
-                <PostShow url={data}/>
+                <PostShow data={data}/>
                 )
             default:
                 return

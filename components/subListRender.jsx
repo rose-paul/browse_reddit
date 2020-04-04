@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react';
+import React from 'react';
 import useSubreddits from './subListHook';
 
 const SubList = ({ handleClick }) => {
@@ -7,7 +7,7 @@ const SubList = ({ handleClick }) => {
 
     return subredditList 
     ? (
-        <ul>
+        <ul className="subreddit-list">
                 {subredditList.map(
                 info => 
                 (

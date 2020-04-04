@@ -4,7 +4,8 @@ const PostIndexItem = ({ data, handleClick }) => {
     return (
         <ul>
             <li>Author: {data.author}</li>
-            <li onClick={() => handleClick(data.url, 'postitem')}>
+            <li><img src={data.thumbnail} alt=""/></li> {/*thumbnail */}
+            <li onClick={() => handleClick(data, 'postitem')}>
                 Title: {data.title}
             </li>
             <li>Text: {data.selftext}</li>

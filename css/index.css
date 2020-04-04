@@ -2,3 +2,13 @@
     display: flex;
     justify-content: space-between;
 }
+
+li {
+    list-style: none;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
