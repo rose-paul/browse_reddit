@@ -1,6 +1,8 @@
 .controller {
     display: flex;
     justify-content: space-between;
+    height: 100vh;
+    width: 100vw;
 }
 
 li {
@@ -11,4 +13,7 @@ ul {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100vh;
+    overflow: scroll;
+    border: 1px solid black;
 }
