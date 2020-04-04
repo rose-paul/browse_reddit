@@ -2,7 +2,6 @@
     display: flex;
     justify-content: space-between;
     height: 100vh;
-    width: 100vw;
 }
 
 li {
@@ -13,7 +12,10 @@ ul {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    max-width: 40vw;
+    padding: 0;
+}
+
+.controller > ul {
     overflow: scroll;
-    border: 1px solid black;
 }

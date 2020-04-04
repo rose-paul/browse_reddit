@@ -25,8 +25,8 @@ const Controller = () => {
     return (
         <div className="controller">
             <SubList handleClick={handleClick}/>
-            <p>{posts}</p>
-            <p>{postDisplay}</p>
+            {posts}
+            {postDisplay}
         </div>
     )
 
