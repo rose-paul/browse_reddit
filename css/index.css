@@ -161,3 +161,7 @@ h2 {
 .subreddit-list :nth-child(2n - 1) {
     padding-top: 15px;
 }
+
+.selected {
+    background-color: rgb(151, 166, 197);
+}
