@@ -107,3 +107,8 @@ ul {
     max-height: 15vh;
     overflow: hidden;
 }
+
+.subreddit-list img {
+    height: 25vh;
+    width: 25vh;
+}

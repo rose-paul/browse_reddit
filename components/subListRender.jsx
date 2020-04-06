@@ -9,16 +9,21 @@ const SubList = ({ handleClick }) => {
     ? (
         <ul className="subreddit-list">
                 {subredditList.map(
-                info => 
-                (
-                    <>
-                    <li onClick={() => handleClick(info.data.url)}>
-                        Display Name: {info.data.url}
-                    </li>
-                    <li><img src={info.data.icon_img} alt=""/></li>
-                    <li>URL: {info.data.url}</li>
-                    </>
-                )
+                info => {
+                        const image = info.data.icon_img ? (
+                          <img src={info.data.icon_img} alt="" />
+                        ) : (
+                          <img src="/public/react_reddit.png" alt="" />
+                        );
+                    return (
+                      <>
+                        <li onClick={() => handleClick(info.data.url)}>
+                          <b>{info.data.url}</b>
+                        </li>
+                        <li>{image}</li>
+                      </>
+                    );
+                }
                 )}
         </ul>
     ) : (
