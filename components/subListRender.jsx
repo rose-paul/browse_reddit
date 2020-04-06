@@ -13,21 +13,19 @@ const SubList = ({ handleClick }) => {
                         const image = info.data.icon_img ? (
                           <img
                             src={info.data.icon_img}
-                            onClick={() => handleClick(info.data.url)}
                           />
                         ) : (
                           <img
                             src="/public/react_reddit.png"
-                            onClick={() => handleClick(info.data.url)}
                           />
                         );
                     return (
-                      <>
-                        <li onClick={() => handleClick(info.data.url)}>
-                          <b>{info.data.url}</b>
-                        </li>
-                        <li>{image}</li>
-                      </>
+                      <ul onClick={() => handleClick(info.data.url)}>
+                          <li>
+                            <b>{info.data.url}</b>
+                          </li>
+                          <li>{image}</li>
+                      </ul>
                     );
                 }
                 )}
