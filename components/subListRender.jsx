@@ -16,7 +16,7 @@ const SubList = ({ handleClick }) => {
                           />
                         ) : (
                           <img
-                            src="../browse_reddit/public/react_reddit.png"
+                            src="react_reddit.png"
                           />
                         );
                     return (
