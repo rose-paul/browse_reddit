@@ -5,15 +5,19 @@ const PostShow = ({ data }) => {
     const image = data.url ? data.url : "";
 
     return data ? (
-        <ul>
-            <li onClick={() => useModal(false, null)} >Author: {data.author}</li>
-            <li>Title: {data.title}</li>
-            <li>Text: {data.selftext}</li>
-            <li><img src={image} alt=""/></li>
-        </ul>
+      <ul>
+        <li onClick={() => useModal(false, null)}>Posted by  {data.author}</li>
+        <li>
+          <b>{data.title}</b>
+        </li>
+        <li>{data.selftext}</li>
+        <li>
+          <img src={image} alt="" />
+        </li>
+      </ul>
     ) : (
-        <p>getting post</p>
-    )
+      <p>getting post</p>
+    );
 }
 
 export default PostShow;
