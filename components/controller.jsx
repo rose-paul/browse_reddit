@@ -3,7 +3,7 @@ import SubList from './subListRender';
 import SubPostsRender from './subPostsList';
 import PostShow from './postShow';
 
-const Controller = () => {
+const Controller = ({ handlePostClick }) => {
 
     const [posts, setPosts] = useState("Select a subreddit!");
     const [postDisplay, setPostDisplay] = useState("Select a post!");
@@ -12,7 +12,7 @@ const Controller = () => {
         switch (type) {
             case 'sublist':
                 return setPosts(
-                <SubPostsRender url={data} handleClick={handleClick} />
+                <SubPostsRender url={data} handleClick={handleClick} handlePostClick={handlePostClick} />
                 )
             case 'postitem':
                 return setPostDisplay(

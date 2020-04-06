@@ -1,4 +1,5 @@
 import React from 'react';
+import useModal from './modal';
 
 const PostShow = ({ data }) => {
 
@@ -6,7 +7,7 @@ const PostShow = ({ data }) => {
 
     return data ? (
         <ul>
-            <li>Author: {data.author}</li>
+            <li onClick={() => useModal(false, null)} >Author: {data.author}</li>
             <li>Title: {data.title}</li>
             <li>Text: {data.selftext}</li>
             <li><img src={image} alt=""/></li>

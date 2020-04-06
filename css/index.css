@@ -19,3 +19,47 @@ ul {
 .controller > ul {
     overflow: scroll;
 }
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.modal-child {
+  position: absolute;
+  background-color: rgb(247, 247, 247);
+  height: 572px;
+  min-width: 30vw;
+  max-width: 30vw;
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+}
+.modal-background-options {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.modal-child-options {
+  position: absolute;
+  background-color: rgb(247, 247, 247);
+  min-width: 40vw;
+  min-height: 30vh;
+  max-width: 35vw;
+  max-height: 30vh;
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+}
