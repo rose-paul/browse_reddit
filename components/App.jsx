@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Controller from './controller';
 import PostShow from './postShow';
 
+
 const Modal = ({ data, handlePostClick }) => {
 
     let component = <PostShow data={data} />

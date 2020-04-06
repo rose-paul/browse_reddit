@@ -1,3 +1,8 @@
+body, html {
+    /* background-image: linear-gradient(to bottom right, rgb(255, 255, 255) 0 20%, rgb(165, 161, 161) 100%); */
+    background-color: rgb(196, 193, 193);
+    font-family: serif;
+}
 .controller {
     display: flex;
     height: 100vh;
@@ -15,7 +20,7 @@ ul {
 }
 
 .controller > ul {
-    overflow: scroll;
+    overflow-y: auto;
 }
 
 .modal-background {
@@ -62,16 +67,43 @@ ul {
   transform: translate(-50%, -50%);
 }
 
+/* beyond index */
+
 .subreddit-list {
     width: 25vw;
-    border-right: 1px solid black;
 }
 
 .controller ul:nth-child(2) {
-    width: 75vw;
-    padding: 10px;
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
 }
 
 .controller ul:nth-child(2) > ul {
-    max-width: 70vw;
+    width: 65vw;
+    height: 15vh;
+    display: flex;
+    flex-direction: row;
+    border: .2px solid rgb(136, 136, 136);
+}
+
+.controller ul:nth-child(2) > ul > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.controller ul:nth-child(2) > ul > li > img {
+    height: 10vh;
+    width: 15vh;
+    border-radius: 10px;
+    padding: 5px 5px 5px 5px;
+}
+
+.controller ul:nth-child(2) > ul > li {
+    max-width: 30vw;
+    max-height: 15vh;
+    overflow: hidden;
 }

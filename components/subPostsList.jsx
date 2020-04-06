@@ -11,9 +11,10 @@ const SubPostsRender = ({ url, handlePostClick }) => {
         axios.get(`https://www.reddit.com${url}hot.json`)
             .then(res => {
                 setPosts(res.data.data.children)
+                console.log('hi')
             }
             )
-    }, [posts])
+    }, [url])
 
     return posts ? (
         <ul>
