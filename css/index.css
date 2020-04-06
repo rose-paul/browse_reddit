@@ -101,7 +101,6 @@ h2 {
     margin: 0;
 }
 .controller ul:nth-child(2) {
-    width: 70vw;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
