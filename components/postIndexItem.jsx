@@ -1,7 +1,6 @@
 import React from 'react';
-import useModal from './modal';
 
-const PostIndexItem = ({ data, handleClick, handlePostClick }) => {
+const PostIndexItem = ({ data, handlePostClick }) => {
     return (
         <ul>
             <li>Author: {data.author}</li>
@@ -11,7 +10,6 @@ const PostIndexItem = ({ data, handleClick, handlePostClick }) => {
             </li>
             <li>Text: {data.selftext}</li>
         </ul>
-    )
-}
+    )}
 
 export default PostIndexItem;

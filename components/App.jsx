@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import Controller from './controller';
-import useModal from './modal';
 import PostShow from './postShow';
 
 const Modal = ({ data, handlePostClick }) => {

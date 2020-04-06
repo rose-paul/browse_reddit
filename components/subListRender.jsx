@@ -12,7 +12,7 @@ const SubList = ({ handleClick }) => {
                 info => 
                 (
                     <>
-                    <li onClick={() => handleClick(info.data.url, 'sublist')}>
+                    <li onClick={() => handleClick(info.data.url)}>
                         Display Name: {info.data.url}
                     </li>
                     <li><img src={info.data.icon_img} alt=""/></li>

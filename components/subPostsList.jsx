@@ -3,7 +3,7 @@ import axios from 'axios';
 import PostIndexItem from './postIndexItem';
 
 
-const SubPostsRender = ({ url, handleClick, handlePostClick }) => {
+const SubPostsRender = ({ url, handlePostClick }) => {
 
     const [posts, setPosts] = useState()
 
@@ -20,7 +20,7 @@ const SubPostsRender = ({ url, handleClick, handlePostClick }) => {
             {
                 posts.map( 
                     post => (
-                    <PostIndexItem data={post.data} handleClick={handleClick} handlePostClick={handlePostClick} />
+                    <PostIndexItem data={post.data} handlePostClick={handlePostClick} />
                 )
                 )
             }
