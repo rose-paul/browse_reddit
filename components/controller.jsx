@@ -12,7 +12,8 @@ const Controller = () => {
         switch (type) {
             case 'sublist':
                 return setPosts(
-                <SubPostsRender url={data} handleClick={handleClick} />)
+                <SubPostsRender url={data} handleClick={handleClick} />
+                )
             case 'postitem':
                 return setPostDisplay(
                 <PostShow data={data}/>

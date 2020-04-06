@@ -12,7 +12,7 @@ const SubPostsRender = ({ url, handleClick }) => {
                 setPosts(res.data.data.children)
             }
             )
-    }, [])
+    }, [posts])
 
     return posts ? (
         <ul>
