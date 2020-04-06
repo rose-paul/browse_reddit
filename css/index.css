@@ -1,7 +1,7 @@
 body, html {
     /* background-image: linear-gradient(to bottom right, rgb(255, 255, 255) 0 20%, rgb(165, 161, 161) 100%); */
-    background-color: rgb(196, 193, 193);
-    font-family: serif;
+    background-color: rgb(151, 166, 197);
+    font-family: sans-serif;
 }
 .controller {
     display: flex;
@@ -70,7 +70,11 @@ ul {
 /* beyond index */
 
 .subreddit-list {
-    width: 25vw;
+    width: 20vw;
+    border: .2px solid rgb(136, 136, 136);
+    margin-right: 2vw;
+    background-color: white;
+    border-radius: 10px;
 }
 
 .controller ul:nth-child(2) {
@@ -79,14 +83,17 @@ ul {
     flex-direction: column;
     align-items: flex-start;
     padding: 0px;
+    border-radius: 10px;
 }
 
 .controller ul:nth-child(2) > ul {
-    width: 65vw;
+    width: 70vw;
     height: 15vh;
     display: flex;
     flex-direction: row;
     border: .2px solid rgb(136, 136, 136);
+    cursor: pointer;
+    background-color: white;
 }
 
 .controller ul:nth-child(2) > ul > div {
@@ -111,4 +118,12 @@ ul {
 .subreddit-list img {
     height: 25vh;
     width: 25vh;
+}
+
+.subreddit-list * {
+    cursor: pointer;
+}
+
+.subreddit-list :nth-child(2n - 1) {
+    padding-top: 15px;
 }

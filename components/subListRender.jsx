@@ -11,9 +11,15 @@ const SubList = ({ handleClick }) => {
                 {subredditList.map(
                 info => {
                         const image = info.data.icon_img ? (
-                          <img src={info.data.icon_img} alt="" />
+                          <img
+                            src={info.data.icon_img}
+                            onClick={() => handleClick(info.data.url)}
+                          />
                         ) : (
-                          <img src="/public/react_reddit.png" alt="" />
+                          <img
+                            src="/public/react_reddit.png"
+                            onClick={() => handleClick(info.data.url)}
+                          />
                         );
                     return (
                       <>
