@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import PostIndexItem from './postIndexItem';
+import Loader from "react-loader-spinner";
 
 
 const SubPostsRender = ({ url, handlePostClick }) => {
@@ -17,18 +18,14 @@ const SubPostsRender = ({ url, handlePostClick }) => {
     }, [url])
 
     return posts ? (
-        <ul>
-            {
-                posts.map( 
-                    post => (
-                    <PostIndexItem data={post.data} handlePostClick={handlePostClick} />
-                )
-                )
-            }
-        </ul>
+      <ul>
+        {posts.map((post) => (
+          <PostIndexItem data={post.data} handlePostClick={handlePostClick} />
+        ))}
+      </ul>
     ) : (
-        <p>fetching posts</p>
-    )
+      <Loader type="Grid" color="white" className="loading" />
+    );
 }
 
 export default SubPostsRender;
