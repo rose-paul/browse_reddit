@@ -7,7 +7,7 @@ const Controller = ({ handlePostClick }) => {
 
     const [posts, setPosts] = useState();
 
-    function handleClick(data, ) {
+    function handleClick(data) {
         return setPosts(
         <SubPostsRender url={data} handlePostClick={handlePostClick} />
             )
