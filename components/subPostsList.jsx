@@ -17,20 +17,7 @@ const SubPostsRender = ({ url, handlePostClick }) => {
     }, [url])
 
     function updateFilter(type) {
-      switch (type) {
-        case "new":
-          return axios.get(`https://www.reddit.com${url}new.json`)
-            .then(res => {
-              setPosts(res.data.data.children)
-            })
-          case "hot":
-          return axios.get(`https://www.reddit.com${url}hot.json`)
-            .then(res => {
-              setPosts(res.data.data.children)
-            })
-          default:
-            return
-      }
+        return axios.get(`https://www.reddit.com${url}${type}.json`)
     }
 
     return posts ? (
