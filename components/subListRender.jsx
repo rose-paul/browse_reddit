@@ -14,7 +14,6 @@ const SubList = ({ handleClick }) => {
       }
       setSelected(id)
       let newEl = document.getElementById(id);
-      console.log(newEl)
       newEl.classList.add('selected')
       handleClick(info.data.url)
     }
