@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Controller from './controller';
 import PostShow from './postShow';
+import Search from './search';
 
 
 const Modal = ({ data, handlePostClick }) => {
@@ -34,6 +35,7 @@ const App = () => {
 
     return (
     <div>
+        <Search />
         <Controller handlePostClick={handlePostClick}/>
         {modal}
     </div>
