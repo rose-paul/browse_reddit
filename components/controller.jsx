@@ -28,7 +28,6 @@ const Controller = ({ handlePostClick }) => {
         <Container>
           <Row>
             <Col>
-              <h2>What's Popular on Reddit?</h2>
               <Search updateQuery={updateQuery} />
               <SubList handleClick={handleClick} subreddits={subreddits} />
             </Col>

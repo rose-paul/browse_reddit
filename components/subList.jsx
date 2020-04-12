@@ -11,7 +11,9 @@ const SubList = ({ handleClick, subreddits }) => {
       let id = info.data.id
       if (selected) {
         let el = document.getElementById(selected);
-        el.classList.remove('selected');
+        if (el) {
+          el.classList.remove('selected');
+        }
       }
       setSelected(id)
       let newEl = document.getElementById(id);
