@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Search = ({updateQuery}) => {
+const Search = ({ updateQuery }) => {
 
     return (
         <form action="">
