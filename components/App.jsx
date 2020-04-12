@@ -2,7 +2,25 @@ import React, {useState} from 'react';
 import Controller from './controller';
 import PostShow from './postShow';
 
+const App = () => {
 
+    const [modal, setModal] = useState();
+
+    function handlePostClick(data) {
+        if (data) {
+            setModal(<Modal data={data} handlePostClick={handlePostClick} />)
+        } else {
+            setModal(null)
+        }
+    }
+
+    return (
+        <div>
+            <Controller handlePostClick={handlePostClick} />
+            {modal}
+        </div>
+    )
+}
 
 const Modal = ({ data, handlePostClick }) => {
 
@@ -18,26 +36,5 @@ const Modal = ({ data, handlePostClick }) => {
     ) : null
 
 }
-
-
-const App = () => { 
-
-    const [modal, setModal] = useState();
-
-    function handlePostClick(data) {
-        if (data) {
-            setModal(<Modal data={data} handlePostClick={handlePostClick}/>)
-        } else {
-            setModal(null)
-        }
-    }
-
-
-    return (
-    <div>
-        <Controller handlePostClick={handlePostClick}/>
-        {modal}
-    </div>
-)}
 
 export default App;
