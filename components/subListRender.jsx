@@ -1,6 +1,8 @@
 import React from 'react'; 
 
 const SubredditList = ({subredditDefault, subredditQuery, updateStyling}) => {
+
+    //use subredditDefault (most popular) unless there are query results
     let toMap = subredditQuery ? subredditQuery : subredditDefault
 
     return toMap

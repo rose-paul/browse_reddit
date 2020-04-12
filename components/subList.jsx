@@ -4,7 +4,7 @@ import SubredditList from './subListRender';
 
 const SubList = ({ handleClick, subreddits }) => {
     
-    const { subredditList } = useSubreddits({});
+    const { subredditList } = useSubreddits({}); // default list of popular subreddits
     const [selected, setSelected] = useState("");
 
     function updateStyling(info) {
