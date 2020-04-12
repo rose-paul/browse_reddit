@@ -6,7 +6,7 @@ const PostShow = ({ data }) => {
 
     return data ? (
       <ul>
-        <li onClick={() => useModal(false, null)}>Posted by  {data.author}</li>
+        <li>Posted by  {data.author}</li>
         <li>
           <b>{data.title}</b>
         </li>
