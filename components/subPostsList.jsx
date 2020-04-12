@@ -18,6 +18,9 @@ const SubPostsRender = ({ url, handlePostClick }) => {
 
     function updateFilter(type) {
         return axios.get(`https://www.reddit.com${url}${type}.json`)
+                .then( res => {
+                  setPosts(res.data.data.children)
+                })
     }
 
     return posts ? (
