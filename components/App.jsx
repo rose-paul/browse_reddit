@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import Controller from './controller';
 import PostShow from './postShow';
+import { Container, Row, Col } from "react-bootstrap";
+
 
 const App = () => {
 
@@ -16,6 +18,12 @@ const App = () => {
 
     return (
         <div>
+            <Container>
+                <Row>
+                    <Col>1 of 2</Col>
+                    <Col>2 of 2</Col>
+                </Row>
+            </Container>
             <Controller handlePostClick={handlePostClick} />
             {modal}
         </div>
