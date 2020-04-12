@@ -6,17 +6,17 @@ import axios from 'axios';
 
 const Controller = ({ handlePostClick }) => {
 
-    const [posts, setPosts] = useState();
-    const [subreddits, setSubreddits] = useState();
+    const [posts, setPosts] = useState(); // post from chosen subreddit
+    const [subreddits, setSubreddits] = useState(); //subreddit list state based on query, props for subreddit list
 
-    function updateQuery(data) {
+    function updateQuery(data) { //pass as props to search component
       axios.get(`https://www.reddit.com/subreddits/search.json?q=${data}`)
         .then(res => {
           setSubreddits(res.data.data.children)
         })
     }
 
-    function handleClick(data) {
+    function handleClick(data) { //set posts state if click on subreddit
         return setPosts(
         <SubPostsRender url={data} handlePostClick={handlePostClick} />
             )
