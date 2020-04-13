@@ -134,7 +134,7 @@ input {
 }
 
 .selected {
-    background-color: orange;
+    background-color: rgb(113, 124, 128);
 }
 /* end subreddit list */
 
