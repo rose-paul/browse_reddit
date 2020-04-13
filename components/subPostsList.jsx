@@ -37,7 +37,7 @@ const SubPostsRender = ({ url, handlePostClick }) => {
         </ul>
       </div>
     ) : (
-      <Loader type="Grid" color="white" className="loading" />
+        <Loader type="Grid" color="white" className="loading" />
     );
 }
 
