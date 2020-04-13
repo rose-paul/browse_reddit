@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import Controller from './controller';
 import PostShow from './postShow';
-import { Container, Row, Col } from "react-bootstrap";
 
 const App = () => {
 

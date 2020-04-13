@@ -7,11 +7,11 @@ import { Container, Row, Col } from "react-bootstrap";
 
 const Controller = ({ handlePostClick }) => {
 
-    const [posts, setPosts] = useState(); // post from chosen subreddit
-    const [subreddits, setSubreddits] = useState(); //subreddit list state based on query, props for subreddit list
+    const [posts, setPosts] = useState(); // posts from chosen subreddit
+    const [subreddits, setSubreddits] = useState(); //subreddit list state based on query
 
-    function updateQuery(data) { //pass as props to search component
-      //clear styling since reddit gives same ids on next list of 25
+    function updateQuery(data) { //pass function as props to search component
+      //clear styling since reddit gives same ids on new list of 25
       let el = document.querySelector('.selected');
       if (el) {
         el.classList.remove('selected');
