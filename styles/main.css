@@ -29,13 +29,19 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+    max-height: 80vh;
+    max-width: 75vw;
+    overflow: scroll;
 }
 
 .modal-child > ul, .modal-child li {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.modal-child > ul {
+    overflow: scroll;
 }
 
 .close-button {
@@ -82,9 +88,9 @@ h1 {
 
 #post-show-img {
     object-fit: contain;
-    max-height: 600px;
-    min-height: 400px;
     width: 600px;
+    min-height: 400px;
+    max-height: 600px;
 }
 
 .btn-secondary {

@@ -23,7 +23,7 @@ const PostShow = ({ data }) => {
     return false;
   }
     
-    const source = data.media && data.media.reddit_video.fallback_url ? 'video' : 'img'
+    const source = data.media && data.media.reddit_video ? 'video' : 'img'
     let media;
     if (source === 'video') {
       media = <li>
