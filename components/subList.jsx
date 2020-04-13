@@ -10,7 +10,7 @@ const SubList = ({ handleClick, subreddits }) => {
     function updateStyling(info) {
       let id = info.data.id
       if (selected) {
-        let el = document.getElementById(selected);
+        let el = document.querySelector('.selected');
         if (el) {
           el.classList.remove('selected');
         }

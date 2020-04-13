@@ -11,10 +11,19 @@ const Controller = ({ handlePostClick }) => {
     const [subreddits, setSubreddits] = useState(); //subreddit list state based on query, props for subreddit list
 
     function updateQuery(data) { //pass as props to search component
-      axios.get(`https://www.reddit.com/subreddits/search.json?q=${data}`)
-        .then(res => {
-          setSubreddits(res.data.data.children)
-        })
+      //clear styling since reddit gives same ids on next list of 25
+      let el = document.querySelector('.selected');
+      if (el) {
+        el.classList.remove('selected');
+      }
+      if (data) {
+        axios.get(`https://www.reddit.com/subreddits/search.json?q=${data}`)
+          .then(res => {
+            setSubreddits(res.data.data.children)
+          })
+      } else {
+        setSubreddits(null)
+      }
     }
 
     function handleClick(data) { //set posts state if click on subreddit
