@@ -16,12 +16,25 @@ img {
 .modal-child {
     position: absolute;
     background-color: rgb(247, 247, 247);
-    max-height: 65vh;
-    max-width: 50vw;
+    padding: 10px;
     top: 50%;
     left: 50%;
     border-radius: 10px;
     transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.modal-child > ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.close-button {
+    margin-left: auto;
 }
 
 ul {
@@ -61,4 +74,8 @@ input {
 
 .post-index-item > * {
     padding: 2px;
+}
+
+#post-show-img {
+    object-fit: contain;
 }
