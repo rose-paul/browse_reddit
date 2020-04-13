@@ -26,7 +26,7 @@ const SubPostsRender = ({ url, handlePostClick }) => {
 
     return posts ? (
       <div>
-        <div>
+        <div className="buttons">
           <Button variant="secondary" onClick={() => updateFilter("new")}>New</Button>{" "}
           <Button variant="secondary" onClick={() => updateFilter("hot")}>Hot</Button>{" "}
         </div>

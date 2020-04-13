@@ -27,11 +27,11 @@ const Controller = ({ handlePostClick }) => {
       <div>
         <Container>
           <Row>
-            <Col xs={2} sm={2} md={2} large={2} xl ={2}>
+            <Col xs={3} sm={3} md={3} large={3} xl ={3}>
               <Search updateQuery={updateQuery} />
               <SubList handleClick={handleClick} subreddits={subreddits} />
             </Col>
-            <Col xs={10} sm={10} md={10} large={10} xl ={10}>
+            <Col xs={9} sm={9} md={9} large={9} xl ={9}>
             {posts}
             </Col>
           </Row>
