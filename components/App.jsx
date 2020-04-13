@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 import Controller from './controller';
 import PostShow from './postShow';
-
-
+import { Container, Row, Col } from "react-bootstrap";
 
 const App = () => {
 
@@ -18,9 +17,12 @@ const App = () => {
 
     return (
         <div>
+            <h1>Reddit Browsing</h1>
             <Controller handlePostClick={handlePostClick} />
             {modal}
         </div>
+
+
     )
 }
 

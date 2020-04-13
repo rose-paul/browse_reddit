@@ -25,8 +25,10 @@ const SubPostsRender = ({ url, handlePostClick }) => {
 
     return posts ? (
       <div>
+        <div>
         <button onClick={() => updateFilter("new")}>New</button>
         <button onClick={() => updateFilter("hot")}>Hot</button>
+        </div>
       <ul>
         {posts.map((post) => (
           <PostIndexItem data={post.data} handlePostClick={handlePostClick} />
