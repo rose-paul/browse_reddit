@@ -10,14 +10,15 @@ const PostIndexItem = ({ data, handlePostClick }) => {
 
     return (
       <ul onClick={() => handlePostClick(data)} className="post-index-item">
-        <li>{image}</li>
-        <div>
-          <li>
-            <b>{data.title}</b>
-          </li>
-          <li>Posted by{data.author}</li>
-        </div>
+          <li>{image}</li>
+          <div>
+            <li>
+              <b>{data.title}</b>
+            </li>
+            <li>Posted by{data.author}</li>
+          </div>
       </ul>
-    );}
+    )
+  }
 
 export default PostIndexItem;

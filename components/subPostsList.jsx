@@ -4,7 +4,6 @@ import PostIndexItem from './postIndexItem';
 import Loader from "react-loader-spinner";
 import { Button } from 'react-bootstrap';
 
-
 const SubPostsRender = ({ url, handlePostClick }) => {
 
     const [posts, setPosts] = useState()
@@ -26,18 +25,25 @@ const SubPostsRender = ({ url, handlePostClick }) => {
 
     return posts ? (
       <div>
-        <div className="buttons">
-          <Button variant="secondary" onClick={() => updateFilter("new")}>New</Button>{" "}
-          <Button variant="secondary" onClick={() => updateFilter("hot")}>Hot</Button>{" "}
-        </div>
-        <ul>
-          {posts.map((post) => (
-            <PostIndexItem data={post.data} handlePostClick={handlePostClick} />
-          ))}
-        </ul>
+          <div className="buttons">
+            <Button variant="secondary" onClick={() => updateFilter("new")}>
+              New
+            </Button>{" "}
+            <Button variant="secondary" onClick={() => updateFilter("hot")}>
+              Hot
+            </Button>{" "}
+          </div>
+          <ul>
+            {posts.map((post) => (
+              <PostIndexItem
+                data={post.data}
+                handlePostClick={handlePostClick}
+              />
+            ))}
+          </ul>
       </div>
     ) : (
-        <Loader type="Grid" color="white" className="loading" />
+      <Loader type="Grid" color="white" className="loading" />
     );
 }
 
