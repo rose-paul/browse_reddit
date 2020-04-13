@@ -3,6 +3,7 @@ import SubList from './subList';
 import SubPostsRender from './subPostsList';
 import Search from './search';
 import axios from 'axios';
+import { Container, Row, Col } from "react-bootstrap";
 
 const Controller = ({ handlePostClick }) => {
 
@@ -24,14 +25,17 @@ const Controller = ({ handlePostClick }) => {
 
     return (
       <div>
-        <h2>What's Popular on Reddit?</h2>
-        <div className="controller">
-          <Search updateQuery={updateQuery} />
-          <SubList handleClick={handleClick} 
-                  subreddits={subreddits}
-          />
-          {posts}
-        </div>
+        <Container>
+          <Row>
+            <Col xs={2} sm={2} md={2} large={2} xl ={2}>
+              <Search updateQuery={updateQuery} />
+              <SubList handleClick={handleClick} subreddits={subreddits} />
+            </Col>
+            <Col xs={10} sm={10} md={10} large={10} xl ={10}>
+            {posts}
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
 
