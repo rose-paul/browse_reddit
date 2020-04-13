@@ -78,4 +78,6 @@ input {
 
 #post-show-img {
     object-fit: contain;
+    min-height: 400px;
+    width: 600px;
 }
