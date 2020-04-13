@@ -9,7 +9,7 @@ const PostIndexItem = ({ data, handlePostClick }) => {
     );
 
     return (
-      <ul onClick={() => handlePostClick(data)}>
+      <ul onClick={() => handlePostClick(data)} className="post-index-item">
         <li>{image}</li>
         <div>
           <li>
