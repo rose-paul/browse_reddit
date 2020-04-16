@@ -11,7 +11,7 @@ const Controller = ({ handlePostClick }) => {
     const [subreddits, setSubreddits] = useState(); //subreddit list state based on query
 
     function updateQuery(data) { //pass function as props to search component
-      //clear styling since reddit gives same ids on new list of 25
+      // REFACTOR THIS
       let el = document.querySelector('.selected');
       if (el) {
         el.classList.remove('selected');
