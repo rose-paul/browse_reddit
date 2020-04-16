@@ -1,9 +1,14 @@
 import React from 'react'; 
 
-const SubredditList = ({subredditDefault, subredditQuery, updateStyling}) => {
+const SubredditList = ({subredditDefault, subredditQuery, state, dispatch, handleClick}) => {
 
     //use subredditDefault (most popular) unless there are query results
     let toMap = subredditQuery ? subredditQuery : subredditDefault
+
+    function postClicked(info) {
+        handleClick(info.data.url)
+        dispatch({type: 'select', data: info.data.id})
+    }
     
     return toMap
         ? (
@@ -17,7 +22,7 @@ const SubredditList = ({subredditDefault, subredditQuery, updateStyling}) => {
                                 <img src="https://github.com/rose-paul/browse_reddit/blob/master/public/react_reddit.png?raw=true" />
                             );
                         return (
-                            <ul id={id} onClick={() => updateStyling(info)}>
+                            <ul id={id} onClick={() => postClicked(info)} className={state.select && state.id === id ? 'selected' : null}>
                                 <li>
                                     <b>{info.data.url}</b>
                                 </li>
