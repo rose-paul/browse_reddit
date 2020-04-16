@@ -1,9 +1,11 @@
 import React from 'react'; 
+import useSubreddits from './subListHook';
 
-const SubredditList = ({subredditDefault, subredditQuery, state, dispatch, handleClick}) => {
+const SubredditList = ({subredditQuery, state, dispatch, handleClick}) => {
 
     //use subredditDefault (most popular) unless there are query results
-    let toMap = subredditQuery ? subredditQuery : subredditDefault
+    const { subredditList } = useSubreddits({});
+    let toMap = subredditQuery ? subredditQuery : subredditList
 
     function postClicked(info) {
         handleClick(info.data.url)
