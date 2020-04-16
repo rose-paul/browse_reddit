@@ -1,17 +1,16 @@
-import React, {useReducer}from 'react'; 
+import React, {useState}from 'react'; 
 import useDefaultSubreddits from './useDefaultSubreddits';
-import selectReducer from './reducer';
 
 const SubredditList = ({subredditQuery, handleSubClick}) => {
 
     //use subredditDefault (most popular) unless there are query results
     const { defaultSubs } = useDefaultSubreddits({});
     let toMap = subredditQuery ? subredditQuery : defaultSubs
-    const [state, dispatch] = useReducer(selectReducer, { select: false, id: null }) // state active styling
+    const [state, setState] = useState(null) // state active styling
 
-    function postClicked(info) {
+    function subClicked(info) {
         handleSubClick(info.data.url)
-        dispatch({type: 'select', data: info.data.id})
+        setState(info.data.id)
     }
     
     return toMap
@@ -27,8 +26,8 @@ const SubredditList = ({subredditQuery, handleSubClick}) => {
                             );
                         return (
                             <ul id={id} 
-                                onClick={() => postClicked(info)} 
-                                className={state.select && state.id === id ? 'selected' : null}>
+                                onClick={() => subClicked(info)} 
+                                className={state === id ? 'selected' : null}>
                                 <li>
                                     <b>{info.data.url}</b>
                                 </li>
