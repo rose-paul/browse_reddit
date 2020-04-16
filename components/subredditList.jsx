@@ -1,14 +1,14 @@
 import React from 'react'; 
-import useSubreddits from './subListHook';
+import useDefaultSubreddits from './useDefaultSubreddits';
 
-const SubredditList = ({subredditQuery, state, dispatch, handleClick}) => {
+const SubredditList = ({subredditQuery, state, dispatch, handleSubClick}) => {
 
     //use subredditDefault (most popular) unless there are query results
-    const { subredditList } = useSubreddits({});
-    let toMap = subredditQuery ? subredditQuery : subredditList
+    const { defaultSubs } = useDefaultSubreddits({});
+    let toMap = subredditQuery ? subredditQuery : defaultSubs
 
     function postClicked(info) {
-        handleClick(info.data.url)
+        handleSubClick(info.data.url)
         dispatch({type: 'select', data: info.data.id})
     }
     
@@ -24,7 +24,9 @@ const SubredditList = ({subredditQuery, state, dispatch, handleClick}) => {
                                 <img src="https://github.com/rose-paul/browse_reddit/blob/master/public/react_reddit.png?raw=true" />
                             );
                         return (
-                            <ul id={id} onClick={() => postClicked(info)} className={state.select && state.id === id ? 'selected' : null}>
+                            <ul id={id} 
+                                onClick={() => postClicked(info)} 
+                                className={state.select && state.id === id ? 'selected' : null}>
                                 <li>
                                     <b>{info.data.url}</b>
                                 </li>

@@ -1,19 +1,16 @@
 import React, { useState, useReducer } from 'react';
-import SubPostsRender from './subPostsList';
+import PostsList from './postsList';
 import Search from './search';
 import axios from 'axios';
 import { Container, Row, Col } from "react-bootstrap";
 import selectReducer from './reducer';
-import SubredditList from './subListRender';
+import SubredditList from './subredditList';
 
-
-// step back through this a bit
-// useReducer() --> some redux behavior
 const Controller = ({ handlePostClick }) => {
 
-    const [subreddits, setSubreddits] = useState(); //subreddit list state based on query
-    const [posts, setPosts] = useState(); // posts from chosen subreddit
-    const [state, dispatch] = useReducer(selectReducer, { select: false, id: null })
+    const [subreddits, setSubreddits] = useState(); //subreddit list based on query
+    const [posts, setPosts] = useState(<p>Select a subreddit!</p>); // posts from chosen subreddit
+    const [state, dispatch] = useReducer(selectReducer, { select: false, id: null }) // state active styling
 
     function updateQuery(data) { //pass function as props to search component
       if (state.select) {
@@ -29,9 +26,9 @@ const Controller = ({ handlePostClick }) => {
       }
     }
 
-    function handleClick(data) { //set posts state if click on subreddit
+    function handleSubClick(data) { //set posts state if click on subreddit
         return setPosts(
-        <SubPostsRender url={data} handlePostClick={handlePostClick} />
+        <PostsList url={data} handlePostClick={handlePostClick} />
             )
     }
 
@@ -41,7 +38,7 @@ const Controller = ({ handlePostClick }) => {
           <Row>
             <Col xs={3} sm={3} md={3} large={3} xl ={3}>
               <Search updateQuery={updateQuery} />
-              <SubredditList subredditQuery={subreddits} state={state} dispatch={dispatch} handleClick={handleClick}/>
+              <SubredditList subredditQuery={subreddits} state={state} dispatch={dispatch} handleSubClick={handleSubClick}/>
             </Col>
             <Col xs={9} sm={9} md={9} large={9} xl ={9}>
             {posts}
