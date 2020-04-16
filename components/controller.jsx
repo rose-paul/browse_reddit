@@ -4,11 +4,12 @@ import SubPostsRender from './subPostsList';
 import Search from './search';
 import axios from 'axios';
 import { Container, Row, Col } from "react-bootstrap";
-
+// step back through this a bit
+// useReducer() --> some redux behavior
 const Controller = ({ handlePostClick }) => {
 
-    const [posts, setPosts] = useState(); // posts from chosen subreddit
     const [subreddits, setSubreddits] = useState(); //subreddit list state based on query
+    const [posts, setPosts] = useState(); // posts from chosen subreddit
 
     function updateQuery(data) { //pass function as props to search component
       // REFACTOR THIS
