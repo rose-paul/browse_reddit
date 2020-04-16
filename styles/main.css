@@ -11,6 +11,13 @@ img {
     width: 100px;
 }
 
+p {
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
 /* modal */
 .modal-background {
   position: fixed;

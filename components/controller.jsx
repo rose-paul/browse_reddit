@@ -1,21 +1,20 @@
-import React, { useState } from 'react';
-import SubList from './subList';
-import SubPostsRender from './subPostsList';
+import React, { useState, useReducer } from 'react';
+import PostsList from './postsList';
 import Search from './search';
 import axios from 'axios';
 import { Container, Row, Col } from "react-bootstrap";
-// step back through this a bit
-// useReducer() --> some redux behavior
+import selectReducer from './reducer';
+import SubredditList from './subredditList';
+
 const Controller = ({ handlePostClick }) => {
 
-    const [subreddits, setSubreddits] = useState(); //subreddit list state based on query
-    const [posts, setPosts] = useState(); // posts from chosen subreddit
+    const [subreddits, setSubreddits] = useState(); //subreddit list based on query
+    const [posts, setPosts] = useState(<p>Select a subreddit!</p>); // posts from chosen subreddit
+    const [state, dispatch] = useReducer(selectReducer, { select: false, id: null }) // state active styling
 
     function updateQuery(data) { //pass function as props to search component
-      // REFACTOR THIS
-      let el = document.querySelector('.selected');
-      if (el) {
-        el.classList.remove('selected');
+      if (state.select) {
+        dispatch('unselect')
       }
       if (data) {
         axios.get(`https://www.reddit.com/subreddits/search.json?q=${data}`)
@@ -27,9 +26,9 @@ const Controller = ({ handlePostClick }) => {
       }
     }
 
-    function handleClick(data) { //set posts state if click on subreddit
+    function handleSubClick(data) { //set posts state if click on subreddit
         return setPosts(
-        <SubPostsRender url={data} handlePostClick={handlePostClick} />
+        <PostsList url={data} handlePostClick={handlePostClick} />
             )
     }
 
@@ -39,7 +38,7 @@ const Controller = ({ handlePostClick }) => {
           <Row>
             <Col xs={3} sm={3} md={3} large={3} xl ={3}>
               <Search updateQuery={updateQuery} />
-              <SubList handleClick={handleClick} subreddits={subreddits} />
+              <SubredditList subredditQuery={subreddits} state={state} dispatch={dispatch} handleSubClick={handleSubClick}/>
             </Col>
             <Col xs={9} sm={9} md={9} large={9} xl ={9}>
             {posts}

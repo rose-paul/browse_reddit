@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const useSubreddits = () => {
-    const [subredditList, setList] = useState()
+const useDefaultSubreddits = () => {
+    const [defaultSubs, setList] = useState()
 
     useEffect(() => {
         axios.get("https://www.reddit.com/subreddits/popular.json")
@@ -10,7 +10,7 @@ const useSubreddits = () => {
                 setList(res.data.data.children)}
                 )
     }, [])
-    return { subredditList };
+    return { defaultSubs };
 }
 
-export default useSubreddits;
+export default useDefaultSubreddits;

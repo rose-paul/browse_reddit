@@ -4,7 +4,7 @@ import PostIndexItem from './postIndexItem';
 import Loader from "react-loader-spinner";
 import { Button } from 'react-bootstrap';
 
-const SubPostsRender = ({ url, handlePostClick }) => {
+const PostsList = ({ url, handlePostClick }) => {
 
     const [posts, setPosts] = useState()
 
@@ -47,4 +47,4 @@ const SubPostsRender = ({ url, handlePostClick }) => {
     );
 }
 
-export default SubPostsRender;
+export default PostsList;
